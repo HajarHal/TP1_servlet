@@ -14,11 +14,10 @@ public class BlacklistFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        // Initialise la liste noire avec des noms interdits (à adapter selon vos besoins)
         blacklist = new ArrayList<>();
-        blacklist.add("john");
-        blacklist.add("jane");
-        blacklist.add("doe");
+        blacklist.add("lamiae");
+        blacklist.add("chaimae");
+        blacklist.add("yahya");
     }
 
     @Override
@@ -26,18 +25,14 @@ public class BlacklistFilter implements Filter {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         String nom = httpRequest.getParameter("nom");
 
-        // Vérifie si le nom est dans la liste noire
         if (nom != null && blacklist.contains(nom.toLowerCase())) {
-            // Si le nom est dans la liste noire, renvoyer une erreur ou rediriger vers une page d'erreur
             request.getRequestDispatcher("/error.jsp").forward(request, response);
         } else {
-            // Sinon, laissez la requête passer à la servlet suivante dans la chaîne (GreetingServlet)
             chain.doFilter(request, response);
         }
     }
 
     @Override
     public void destroy() {
-        // Méthode de nettoyage du filtre
     }
 }

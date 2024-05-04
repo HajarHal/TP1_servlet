@@ -6,10 +6,16 @@
 <title>Welcome to this amazing web application</title>
 </head>
 <body>
-<CENTER><H1> Tenter votre chance a cette lotterie virtuelle!</H1></CENTER>
-<form action="hello" method="post">
-    Votre nom svp: <input type="text" name="nom"><br><br>
-    <center><input type="submit" name="Submit Query"></center>
-</form>
+<CENTER><H1>Tentez votre chance à cette lotterie virtuelle !</H1></CENTER>
+<FORM ACTION="./hello" METHOD="post">
+ Votre nom svp : <INPUT TYPE="TEXT" NAME="nom"><BR>
+ <BR>
+ Opération :
+ <input type="radio" name="action" value="submit"> Soumettre
+ <input type="radio" name="action" value="delete"> Supprimer
+ <input type="radio" name="action" value="update"> Mettre à jour<BR>
+ <BR>
+ <CENTER><INPUT TYPE="SUBMIT" NAME="Submit Query" VALUE="Soumettre"></CENTER>
+</FORM>
 </body>
 </html>
